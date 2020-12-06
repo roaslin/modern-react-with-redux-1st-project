@@ -10,6 +10,3 @@ const App = function(){
 // take the react component and show itr on the screen
 
 ReactDOM.render(<App />, document.querySelector('#root'));
-
-backend, preprod, services, vpc, office, rac, network, devel, hadoop, trovit, solr,
-internal, mad.mitulagroup.net, mitulaapps.com
