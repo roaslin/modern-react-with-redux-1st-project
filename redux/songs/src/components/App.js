@@ -22,10 +22,16 @@ const App = () => {
   const [selectedSong, setSelectedSong] = useState(songs[0]);
 
   return (
-    <>
-      <SongList songs={songs} onSelectedSong={setSelectedSong} />
-      <SongDetail song={selectedSong} />
-    </>
+    <div className="ui container grid">
+      <div className="ui row">
+        <div className="column eight wide">
+          <SongList songs={songs} onSelectedSong={setSelectedSong} />
+        </div>
+        <div className="column six wide">
+          <SongDetail song={selectedSong} />
+        </div>
+      </div>
+    </div>
   );
 };
 
