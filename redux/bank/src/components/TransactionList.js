@@ -1,21 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const transactions = [
-  {
-    name: 'raul',
-    amount: 10,
-  },
-  {
-    name: 'raul',
-    amount: 150,
-  },
-  {
-    name: 'raul',
-    amount: -110,
-  },
-];
-
-const TransactionList = () => {
+const TransactionList = ({ transactions }) => {
+  if (!transactions.length) {
+    return <div>No transactions</div>;
+  }
   const renderedTransactions = transactions.map((transaction) => {
     return (
       <div className='item'>
@@ -30,4 +19,8 @@ const TransactionList = () => {
   return <div>{renderedTransactions}</div>;
 };
 
-export default TransactionList;
+const mapStateToProps = (state) => {
+  return { transactions: state.transactions };
+};
+
+export default connect(mapStateToProps)(TransactionList);

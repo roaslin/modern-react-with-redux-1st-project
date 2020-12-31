@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { addTransaction, withdrawTransaction } from '../actions';
 
-// const accounts = [{ name: 'raul' }, { name: 'davura' }, { name: 'goku' }];
-
-const AccountList = ({ accounts }) => {
+const AccountList = ({ accounts, addTransaction, withdrawTransaction }) => {
   if (accounts.length === 0) {
     return <div>No accounts</div>;
   }
@@ -16,13 +15,13 @@ const AccountList = ({ accounts }) => {
             {account.name}
             <button
               className='ui mini button'
-              //   onClick={() => selectSong(song)}
+              onClick={() => addTransaction(account.name)}
             >
               Add amount
             </button>
             <button
               className='ui mini button'
-              //   onClick={() => selectSong(song)}
+              onClick={() => withdrawTransaction(account.name)}
             >
               Withdraw
             </button>
@@ -35,8 +34,10 @@ const AccountList = ({ accounts }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return { accounts: state.accounts };
 };
 
-export default connect(mapStateToProps)(AccountList);
+export default connect(mapStateToProps, {
+  addTransaction,
+  withdrawTransaction,
+})(AccountList);

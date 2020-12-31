@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { createAccount } from '../actions';
-import { useState } from 'react';
 import { connect } from 'react-redux';
 
 class AddAccount extends Component {
