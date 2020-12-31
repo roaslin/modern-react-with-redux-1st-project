@@ -19,16 +19,14 @@ const songs = [
 ];
 
 const App = () => {
-  const [selectedSong, setSelectedSong] = useState(songs[0]);
-
   return (
     <div className="ui container grid">
       <div className="ui row">
         <div className="column eight wide">
-          <SongList songs={songs} onSelectedSong={setSelectedSong} />
+          <SongList songs={songs}/>
         </div>
         <div className="column six wide">
-          <SongDetail song={selectedSong} />
+          <SongDetail/>
         </div>
       </div>
     </div>
