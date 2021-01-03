@@ -1,42 +1,38 @@
-import React, { Component } from 'react';
-import { clearSubmitErrors, Field, reduxForm } from 'redux-form';
-class StreamCreate extends Component {
-  renderInput = ({ input, label, meta: { touched, error } }) => {
-    return (
-      // Before destructuring
-      //   <input
-      //     onChange={input.onChange}
-      //     value={input.value}
-      //   />
-      <div className='field'>
-        <label>{label}</label>
-        <input {...input} />
-        {touched && error && <div className='ui error message'>{error}</div>}
-      </div>
-    );
-  };
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 
-  onSubmit = (formValues) => {
-    console.log(formValues);
-  };
+const renderInput = ({ input, label, meta: { touched, error } }) => {
+  return (
+    // Before destructuring
+    //   <input
+    //     onChange={input.onChange}
+    //     value={input.value}
+    //   />
+    <div className='field'>
+      <label>{label}</label>
+      <input {...input} />
+      {touched && error && <div className='ui error message'>{error}</div>}
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <form
-        onSubmit={this.props.handleSubmit(this.onSubmit)}
-        className='ui form error'
-      >
-        <Field label='Enter Title' name='title' component={this.renderInput} />
-        <Field
-          label='Enter Description'
-          name='description'
-          component={this.renderInput}
-        />
-        <button className='ui button primary'>Submit</button>
-      </form>
-    );
-  }
-}
+const onSubmit = (formValues) => {
+  console.log(formValues);
+};
+
+const StreamCreate = ({ handleSubmit }) => {
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className='ui form error'>
+      <Field label='Enter Title' name='title' component={renderInput} />
+      <Field
+        label='Enter Description'
+        name='description'
+        component={renderInput}
+      />
+      <button className='ui button primary'>Submit</button>
+    </form>
+  );
+};
 
 const validate = (formValues) => {
   const errors = {};
