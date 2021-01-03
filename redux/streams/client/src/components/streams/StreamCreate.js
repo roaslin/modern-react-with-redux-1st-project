@@ -11,7 +11,7 @@ class StreamCreate extends Component {
       <div className='field'>
         <label>{label}</label>
         <input {...input} />
-        {touched && error && <span>{error}</span>}
+        {touched && error && <div className='ui error message'>{error}</div>}
       </div>
     );
   };
@@ -24,7 +24,7 @@ class StreamCreate extends Component {
     return (
       <form
         onSubmit={this.props.handleSubmit(this.onSubmit)}
-        className='ui form'
+        className='ui form error'
       >
         <Field label='Enter Title' name='title' component={this.renderInput} />
         <Field
