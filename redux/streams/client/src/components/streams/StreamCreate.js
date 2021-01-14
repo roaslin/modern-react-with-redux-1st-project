@@ -29,7 +29,7 @@ const StreamCreate = ({ handleSubmit, createStream }) => {
       <Field
         label='Enter Description'
         name='description'
-        component={renderInput} 
+        component={renderInput}
       />
       <button className='ui button primary'>Submit</button>
     </form>
