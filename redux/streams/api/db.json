@@ -1,21 +1,8 @@
 {
   "streams": [
     {
-      "title": "test",
-      "description": "test containing userId",
-      "userId": "100051068497333604186",
-      "id": 1
-    },
-    {
-      "title": "Writing-Social intelligence",
+      "title": "Writing-Social intelligence  edtedf",
       "description": "Piquinho  in Pico Island beautiful",
-      "userId": "100051068497333604186",
-      "id": 2
-    },
-    {
-      "title": "Writing-Social intelligence",
-      "description": "Piquinho  in Pico Island beautiful",
-      "userId": "100051068497333604186",
       "id": 3
     },
     {
@@ -35,10 +22,6 @@
       "description": "gdgfdgfdgfdgfdgfd",
       "userId": "100051068497333604186",
       "id": 6
-    },
-    {
-      "function dispatch() {\n          return _dispatch.apply(void 0, arguments);\n        }": "",
-      "id": 7
     },
     {
       "title": "GUIL-1095 add info property to bootstrap",

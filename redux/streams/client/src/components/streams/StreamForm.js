@@ -18,23 +18,21 @@ const StreamForm = ({ formHeader, handleSubmit, onFormSubmit }) => {
   };
 
   const onSubmit = (formValues) => {
-      console.log('Suibmit form');
-      console.log(formValues);
     onFormSubmit(formValues);
   };
 
   return (
-      <>
+    <>
       <h2>{formHeader}</h2>
-    <form onSubmit={handleSubmit(onSubmit)} className='ui form error'>
-      <Field label='Enter Title' name='title' component={renderInput} />
-      <Field
-        label='Enter Description'
-        name='description'
-        component={renderInput}
-      />
-      <button className='ui button primary'>Submit</button>
-    </form>
+      <form onSubmit={handleSubmit(onSubmit)} className='ui form error'>
+        <Field label='Enter Title' name='title' component={renderInput} />
+        <Field
+          label='Enter Description'
+          name='description'
+          component={renderInput}
+        />
+        <button className='ui button primary'>Submit</button>
+      </form>
     </>
   );
 };
