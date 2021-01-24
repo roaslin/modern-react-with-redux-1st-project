@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 import UserCreate from './UserCreate';
-import LanguageContext from '../contexts/LanguageContext';
+import { LanguageStore } from '../contexts/LanguageContext';
 import ColorContext from '../contexts/ColorContext';
+import LanguageSelector from './LanguageSelector';
 
 const App = () => {
-  const [language, setLanguage] = useState('english');
 
   return (
     <div className='ui container'>
-      <div>
-        Select a language
-        <i onClick={() => setLanguage('english')} className='flag us' />
-        <i onClick={() => setLanguage('dutch')} className='flag nl' />
-      </div>
-      {/* value is part of provider */}
-      <ColorContext.Provider value='red'>
+      <LanguageStore>
+        <LanguageSelector />
+        {/* value is part of provider */}
+        {/* Before  */}
+        {/* <ColorContext.Provider value='red'>
         <LanguageContext.Provider value={language}>
-          <UserCreate />
+        <UserCreate />
         </LanguageContext.Provider>
-      </ColorContext.Provider>
+      </ColorContext.Provider> */}
+        {/* After */}
+        <ColorContext.Provider value='red'>
+          <UserCreate />
+        </ColorContext.Provider>
+      </LanguageStore>
     </div>
   );
 };
